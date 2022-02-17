@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+import { TopBarModule } from './shared/modules/topbar/topbar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     HttpClientModule, 
     AppRoutingModule, 
-    AuthModule, 
+    AuthModule,
+    TopBarModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
