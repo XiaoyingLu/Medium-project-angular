@@ -4,10 +4,10 @@ import { select, Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { CurrentUserInterface } from "src/app/shared/types/currentUser.interface";
 import { AuthService } from "../../services/auth.service";
-import { registerAction } from "../../store/register.actions";
+import { registerAction } from "../../store/actions/register.actions";
 
 import { isSubmittingSelector, validationErrorsSelector } from "../../store/selectors";
-import { BackendErrorsInterface } from "../../types/backendErrors.interface";
+import { BackendErrorsInterface } from "../../../shared/types/backendErrors.interface";
 import { RegisterRequestInterface } from "../../types/registerRequest.interface";
 
 @Component({
@@ -46,8 +46,8 @@ export class RegisterComponent implements OnInit{
             user: this.form.value
         }
         this.store.dispatch(registerAction({request}))
-        this.authService.register(this.form.value).subscribe((currentUser: CurrentUserInterface) => {
-            console.log(currentUser);
-        })
+        // this.authService.register(request).subscribe((currentUser: CurrentUserInterface) => {
+        //     console.log(currentUser);
+        // })
     }
 }

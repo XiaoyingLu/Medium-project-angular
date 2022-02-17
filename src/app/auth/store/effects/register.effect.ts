@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { createEffect, Actions, ofType } from "@ngrx/effects";
 
-import { registerAction, registerFailureAction, registerSuccessAction } from "../register.actions";
+import { registerAction, registerFailureAction, registerSuccessAction } from "../actions/register.actions";
 import { catchError, switchMap, map, of, tap } from "rxjs";
 import { AuthService } from "../../services/auth.service";
 import { CurrentUserInterface } from "src/app/shared/types/currentUser.interface";
